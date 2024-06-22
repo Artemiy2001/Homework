@@ -19,5 +19,7 @@ public class BitwiseOperation {
         System.out.println(result);
 
         System.out.println("test");
+
+        System.out.println("test 2");
     }
 }
