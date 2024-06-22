@@ -17,5 +17,7 @@ public class BitwiseOperation {
         int result = firstNum | secondNum;
 
         System.out.println(result);
+
+        System.out.println("test");
     }
 }
