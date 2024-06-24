@@ -31,5 +31,6 @@ bin/
 .DS_Store
 .idea
 
-src/home_work_1/TestGit.java
+Homework.iml
 
+src/home_work_1/TestGit.java
