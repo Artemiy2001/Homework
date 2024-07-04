@@ -3,12 +3,6 @@ package home_work_2.loops;
 import java.math.BigInteger;
 import java.util.Random;
 
-//* Умножать число long a = 1; пока не произойдёт переполнение. В конце в консоль вывести сообщение со значением до переполнения и после переполнения. Умножать на:
-//    	1.4.1. 3
-//    	1.4.2. 188
-//    	1.4.3. -19
-//    	1.4.4. Да и вообще на любое целочисленное
-
 public class Main4 {
 
     public static void main(String[] args) {
@@ -46,10 +40,10 @@ public class Main4 {
 
             }
 
-            BigInteger bigInteger = new BigInteger(Long.toString(num));
-            BigInteger bigInteger1 = new BigInteger(Integer.toString(multiplier));
-            BigInteger bigInteger2 = bigInteger.multiply(bigInteger1);
-            System.out.println("Число больше long: " + bigInteger2);
+            BigInteger bigInteger1 = new BigInteger(Long.toString(num));
+            BigInteger bigInteger2 = new BigInteger(Integer.toString(multiplier));
+            BigInteger bigIntegerResult = bigInteger1.multiply(bigInteger2);
+            System.out.println("Число больше long: " + bigIntegerResult);
             System.out.println();
         }
 
