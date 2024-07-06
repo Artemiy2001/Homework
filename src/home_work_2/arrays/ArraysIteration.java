@@ -91,18 +91,18 @@ public class ArraysIteration {
 
     private static void arrayToConsole(int[] arr){
         System.out.println("Выводми каждый элемент");
-            int i = 0;
-            do {
-                System.out.print(arr[i] + " ");
-                i++;
-            }while (i < arr.length);
 
-            i = 0;
-            System.out.println();
-
-            while (i < arr.length){
-                System.out.print(arr[i] + " ");
+        int i = 0;
+        do {
+            System.out.print(arr[i] + " ");
             i++;
+        }while (i < arr.length);
+
+        i = 0;
+        System.out.println();
+
+        while (i < arr.length){
+            System.out.print(arr[i] + " ");i++;
         }
 
         System.out.println();

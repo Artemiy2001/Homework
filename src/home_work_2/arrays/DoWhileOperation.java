@@ -8,7 +8,7 @@ public class DoWhileOperation implements IArraysOperation{
     @Override
     public void arrayToConsole(int[] arr) {
 
-        System.out.println("Выводми каждый элемент");
+        System.out.println("Выводми каждый элемент циклом doWhile: ");
 
         int i = 0;
         do {
@@ -16,15 +16,13 @@ public class DoWhileOperation implements IArraysOperation{
             i++;
         }while (i < arr.length);
 
-        i = 0;
-        System.out.println();
 
     }
 
     @Override
     public void secondValueToConsole(int[] arr) {
 
-        System.out.println("Выводим каджый второй элемент");
+        System.out.println("Выводим каджый второй элемент циклом doWhile: ");
 
         int i = 1;
         do {
@@ -39,7 +37,7 @@ public class DoWhileOperation implements IArraysOperation{
     @Override
     public void reversArray(int[] arr) {
 
-        System.out.println("Выводим перевернутый массив");
+        System.out.println("Выводим перевернутый массив циклом doWhile: ");
         int i = arr.length - 1;
         do {
             System.out.print(arr[i] + " ");
