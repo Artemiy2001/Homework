@@ -21,10 +21,44 @@ public class ArrayTasks {
 
         int [] twoMinEl = twoMinElements(arr);
         System.out.println("Два наименьших элемента: " + Arrays.toString(twoMinEl));
+
+        int[] newArr = arrayCompression(arr, 10 , 80);
+        System.out.println("Сжатый массив: " + Arrays.toString(newArr));
+
+        int sumOfNum = sumOfNumbers(arr);
+        System.out.println("Сумма всех цифр в массиве: " + sumOfNum);
+    }
+
+    private static int sumOfNumbers(int[] arr) {
+
+        int sum = 0;
+        for (int value : arr){
+            while (value > 0){
+                sum += value % 10;
+                value /= 10;
+            }
+        }
+        return sum;
+    }
+
+    private static int[] arrayCompression(int[] arr, int from, int to) {
+
+        int[] result = new int[arr.length];
+
+        for (int i = 0, j = 0; i < arr.length; i++){
+            if (arr[i] <= from || arr[i] >= to){
+                result[j] = arr[i];
+                j++;
+            }
+        }
+
+        return result;
     }
 
     private static int[] twoMinElements(int[] arr) {
+
         int[] twoMinEl = new int[2];
+
         int minEl = arr[0];
         int indexMinEl = 0;
         for (int i = 0; i < arr.length; i ++){
@@ -34,6 +68,7 @@ public class ArrayTasks {
                 indexMinEl = i;
             }
         }
+
         if (indexMinEl != 0){
             minEl = arr[0];
         }else {
@@ -46,14 +81,17 @@ public class ArrayTasks {
                 minEl = arr[i];
             }
         }
+
         return twoMinEl;
     }
 
     private static int[] elementsBelowAverage(int[] arr) {
+
         int sum = 0;
         for (int value : arr) {
             sum += value;
         }
+
         int averageValue = sum / arr.length;
         int sizeNewArr = 0;
         for (int value : arr){
@@ -61,6 +99,7 @@ public class ArrayTasks {
                 sizeNewArr++;
             }
         }
+
         int[] resultArr = new int[sizeNewArr];
         int counterIndex = 0;
         for (int value : arr) {
@@ -69,6 +108,7 @@ public class ArrayTasks {
                 counterIndex++;
             }
         }
+
         return resultArr;
     }
 
@@ -80,6 +120,7 @@ public class ArrayTasks {
                 maxElement = arr[i];
             }
         }
+
         return maxElement;
     }
 
