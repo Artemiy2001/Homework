@@ -9,7 +9,7 @@ public class ArrayUtil {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите размер массива: ");
-        int arr[] = new int[scanner.nextInt()];
+        int[] arr = new int[scanner.nextInt()];
         for (int i = 0; i < arr.length; i++){
             System.out.print("Введите значение по индексу " + i + ": ");
             arr[i] = scanner.nextInt();
@@ -20,7 +20,7 @@ public class ArrayUtil {
 
     public static int[] arrayRandom(int size, int maxValueExclusion){
 
-        int arr[] = new int[size];
+        int[] arr = new int[size];
 
         Random rnd = new Random();
 

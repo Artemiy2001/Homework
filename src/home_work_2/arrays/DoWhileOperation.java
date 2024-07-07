@@ -1,6 +1,5 @@
 package home_work_2.arrays;
 
-import home_work_2.utils.ArrayUtil;
 
 public class DoWhileOperation implements IArraysOperation{
 
