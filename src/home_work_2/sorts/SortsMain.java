@@ -1,10 +1,11 @@
 package home_work_2.sorts;
 
+import home_work_2.utils.SortUtil;
 import home_work_2.utils.ArrayUtil;
 
 import java.util.Arrays;
 
-public class SortsTest {
+public class SortsMain {
 
     public static void main(String[] args) {
 
@@ -27,8 +28,8 @@ public class SortsTest {
         for (int[] arr : testArr){
             System.out.println();
             System.out.println("Массив до сортировки:" + Arrays.toString(arr));
-            System.out.println("Массив отсортирован пузырьком: " + Arrays.toString(SortArray.sort(arr)));
-            System.out.println("Массив отсортирован шейкером: " + Arrays.toString(SortArray.shake(arr)));
+            System.out.println("Массив отсортирован пузырьком: " + Arrays.toString(SortUtil.sort(arr)));
+            System.out.println("Массив отсортирован шейкером: " + Arrays.toString(SortUtil.shake(arr)));
 
         }
     }

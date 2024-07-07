@@ -1,10 +1,6 @@
-package home_work_2.sorts;
+package home_work_2.utils;
 
-import home_work_2.utils.ArrayUtil;
-
-import java.util.Arrays;
-
-public class SortArray {
+public class SortUtil {
 
     public static int[] shake(int[] arr){
 
