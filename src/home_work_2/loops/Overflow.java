@@ -28,15 +28,18 @@ public class Overflow {
                 }
                 if (counter % 2 == 0){
                     System.out.println("Число long: " + num);
+                    System.out.println("Переполненный long: " + (num * multiplier));
                     multiplier *= -1;
                 }else {
                     System.out.println("Число long: " + (-num));
+                    System.out.println("Переполненный long: " + (num * multiplier));
                 }
             }else {
                 while (num * multiplier > 0){
                     num *= multiplier;
                 }
                 System.out.println("Число long: " + num);
+                System.out.println("Переполненный long: " + (num * multiplier));
 
             }
 
