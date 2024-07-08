@@ -1,19 +1,19 @@
-Задача 1.1 - Factorial
-Задача 1.2 - MultiplicationDigits
-Задача 1.3 - Degree
-Задача 1.4 - Overflow
-Задача 1.5 - DifferentTasks
-Задача 1.6 - MultiplicationTable
-Задача 2.1.1 и 2.1.2 - ArrayUtil
-Задача 2.1.1.1 и 2.1.2.1 - ArrayUtilTest
-Задача 2.2 - ArraysIteration
-Задача 2.3 - IArraysOperation, ArrayInterfaceTest
-Задача 2.3.1 - DoWhileOperation
-Задача 2.3.2 - WhileOperation
-Задача 2.3.3 - ForOperation
-Задача 2.3.4 - ForEachOperation
-Задача 2.4 - ArrayTasks
+Задача 1.1 - loops / Factorial
+Задача 1.2 - loops / MultiplicationDigits
+Задача 1.3 - loops / Degree
+Задача 1.4 - loops / Overflow
+Задача 1.5 - loops / DifferentTasks
+Задача 1.6 - loops / MultiplicationTable
+Задача 2.1.1 и 2.1.2 - utils / ArrayUtil
+Задача 2.1.1.1 и 2.1.2.1 - arrays / ArrayUtilTest
+Задача 2.2 - arrays / ArraysIteration
+Задача 2.3 - arrays / IArraysOperation, arrays / ArrayInterfaceTest
+Задача 2.3.1 - arrays / DoWhileOperation
+Задача 2.3.2 - arrays / WhileOperation
+Задача 2.3.3 - arrays / ForOperation
+Задача 2.3.4 - arrays / ForEachOperation
+Задача 2.4 - arrays / ArrayTasks
 Задача 3 - block_diagrams
-Задача 4.1 - SortUtil
-Задача 4.2 - SortsMain
+Задача 4.1 - utils / SortUtil
+Задача 4.2 - sorts / SortsMain
 
