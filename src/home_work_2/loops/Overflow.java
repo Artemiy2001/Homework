@@ -3,7 +3,7 @@ package home_work_2.loops;
 import java.math.BigInteger;
 import java.util.Random;
 
-public class Main4 {
+public class Overflow {
 
     public static void main(String[] args) {
 

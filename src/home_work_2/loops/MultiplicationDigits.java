@@ -2,7 +2,7 @@ package home_work_2.loops;
 
 import java.util.Scanner;
 
-public class Main2 {
+public class MultiplicationDigits {
 
     public static void main(String[] args) {
 
