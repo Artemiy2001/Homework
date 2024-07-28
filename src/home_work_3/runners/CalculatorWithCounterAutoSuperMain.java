@@ -1,12 +1,13 @@
 package home_work_3.runners;
 
-import home_work_3.calcs.simple.CalculatorWithMathCopy;
+import home_work_3.calcs.additional.CalculatorWithCounterAutoSuper;
 
-public class CalculatorWithMathCopyMain {
+public class CalculatorWithCounterAutoSuperMain {
+
 
     public static void main(String[] args) {
 
-        CalculatorWithMathCopy calc = new CalculatorWithMathCopy();
+        CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
 
         double act1 = calc.multiplication(15 ,7);
 
@@ -19,5 +20,9 @@ public class CalculatorWithMathCopyMain {
         double res = calc.addition(act2, act4);
 
         System.out.println(res);
+        System.out.println("Использований калькулятора: " + calc.getCountOperation());
     }
+
+
+
 }

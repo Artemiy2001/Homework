@@ -8,8 +8,15 @@ public class CalculatorWithMathExtendsMain {
 
         CalculatorWithMathExtends calc = new CalculatorWithMathExtends();
 
-        double res = calc.addition(calc.addition(4.1, calc.multiplication(15 ,7)),
-                calc.factorization(calc.division(28, 5), 2));
+        double act1 = calc.multiplication(15 ,7);
+
+        double act2 = calc.addition(4.1, act1);
+
+        double act3 = calc.division(28, 5);
+
+        double act4 = calc.factorization(act3, 2);
+
+        double res = calc.addition(act2, act4);
 
         System.out.println(res);
     }
