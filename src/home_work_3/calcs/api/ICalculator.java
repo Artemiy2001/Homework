@@ -15,4 +15,6 @@ public interface ICalculator {
     double modulus(double x);
 
     double sqrt(double x);
+
+
 }
