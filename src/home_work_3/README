@@ -1,0 +1,13 @@
+Задание 1 - runners.WithoutCalculatorMain
+Задание 2 - calcs.simple.CalculatorWithOperator, runners.CalculatorWithOperatorMain
+Задание 3 - calcs.simple.CalculatorWithMathCopy, runners.CalculatorWithMathCopyMain
+Задание 4 - calcs.simple.CalculatorWithMathExtends, runners.CalculatorWithMathExtendsMain
+Задание 5 - calcs.additional.CalculatorWithCounterClassic, runners.CalculatorWithCounterClassicMain
+Задание 6 - calcs.additional.CalculatorWithCounterAutoSuper, runners.CalculatorWithCounterAutoSuperMain
+Задание 7 - calcs.additional.CalculatorWithCounterAutoComposite, runners.CalculatorWithCounterDelegateCompositeMain
+Задание 8 - calcs.additional.CalculatorWithCounterAutoAggregation, runners.CalculatorWithCounterDelegateAggregationMain
+Задание 9 - calcs.additional.CalculatorWithCounterAutoChoiceAggregation, runners.CalculatorWithCounterDelegateChoiceAggregationMain
+Задание 10 - calcs.api.ICalculator, calcs.simple.CalculatorWithOperator, calcs.simple.CalculatorWithMathCopy, calcs.simple.CalculatorWithMathExtends
+Задание 11 - calcs.additional.CalculatorWithCounterAutoAggregationInterface, runners.CalculatorWithCounterAutoCompositeInterfaceMain
+Задание 12 - calcs.additional.CalculatorWithMemory, runners.CalculatorWithMemoryMain
+Задание 13 - calcs.additional.CalculatorWithCounterAutoDecorator, calcs.additional.CalculatorWithMemoryDecorator, runners.CalculatorDecoratorMain
