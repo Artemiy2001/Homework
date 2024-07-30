@@ -6,58 +6,65 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
 
     private final ICalculator innerCalc;
 
+    private double memoryValue;
+    private double saveValue;
 
-    private long counterOperation = 0;
-
-    public long getCountOperation(){
-        return counterOperation;
-    }
 
     public CalculatorWithMemoryDecorator(ICalculator innerCalc) {
         this.innerCalc = innerCalc;
     }
 
+    public void save(){
+        saveValue = memoryValue;
+    }
+
+    public double load(){
+        return saveValue;
+    }
+
     @Override
     public double division(double x, double y) {
-        counterOperation++;
-        return innerCalc.division(x, y);
+        memoryValue = innerCalc.division(x, y);
+        return memoryValue;
     }
 
     @Override
     public double multiplication(double x, double y) {
-        counterOperation++;
-        return innerCalc.multiplication(x, y);
+        memoryValue = innerCalc.multiplication(x, y);
+        return memoryValue;
     }
 
     @Override
     public double subtraction(double x, double y) {
-        counterOperation++;
-        return innerCalc.subtraction(x, y);
+        memoryValue = innerCalc.subtraction(x, y);
+        return memoryValue;
     }
 
     @Override
     public double addition(double x, double y) {
-        counterOperation++;
-        return innerCalc.addition(x, y);
+        memoryValue = innerCalc.addition(x, y);
+        return memoryValue;
     }
 
     @Override
     public double factorization(double x, int y) {
-        counterOperation++;
-        return innerCalc.factorization(x, y);
+        memoryValue = innerCalc.factorization(x, y);
+        return memoryValue;
     }
 
     @Override
     public double modulus(double x) {
-        counterOperation++;
-        return innerCalc.modulus(x);
+        memoryValue = innerCalc.modulus(x);
+        return memoryValue;
     }
 
     @Override
     public double sqrt(double x) {
-        counterOperation++;
-        return innerCalc.sqrt(x);
+        memoryValue = innerCalc.sqrt(x);
+        return memoryValue;
     }
 
-
+    public ICalculator getInnerCalc() {
+        return innerCalc;
+    }
 }
