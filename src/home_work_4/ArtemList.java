@@ -1,6 +1,10 @@
 package home_work_4;
 
-public interface ArtemList<T> {
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+public interface ArtemList<T> extends Iterable<T>{
 
     int add(T item);
 
@@ -12,5 +16,10 @@ public interface ArtemList<T> {
 
     boolean delete(T item);
 
+    void sort(Comparator<? super T> comparator);
+
+
+    @Override
+    Iterator<T> iterator();
 
 }

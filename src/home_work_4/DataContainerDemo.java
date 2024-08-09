@@ -1,42 +1,48 @@
 package home_work_4;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class DataContainerDemo {
 
     public static void main(String[] args) {
 
-        DataContainer<String> dataContainer = new DataContainer<>(new String[5]);
+        ArtemList<String> dataContainer = new DataContainer<>(String.class);
 
 
 
-        int a = dataContainer.add("Artem");
-        int b = dataContainer.add("Maxim");
-        int c = dataContainer.add("Vasiliy");
-        dataContainer.add("Vladislav");
-        dataContainer.add("Pavel");
-
-        String str = dataContainer.get(1);
-
-
-
-        String[] arrStr = dataContainer.getItems();
-
-        System.out.println(Arrays.toString(arrStr));
-
-        System.out.println(dataContainer.delete(2));
-        System.out.println(dataContainer.delete("Pavel"));
-        dataContainer.delete("Artem");
-        dataContainer.delete("Maxim");
-        dataContainer.delete(null);
-
-        System.out.println(str);
-
-        System.out.println(a + " " + b + " " + c);
-
+        int index1 = dataContainer.add("Привет");
+        int index2 = dataContainer.add("Как дела");
+        int index3 = dataContainer.add("Работаю");
+        int index4 = dataContainer.add("Артем");
+        int index5 = dataContainer.add("Дизоксирибонуклииновая кислота");
+        int index6 = dataContainer.add("Привет");
+        int index7 = dataContainer.add("Vladislav");
+        String text1 = dataContainer.get(index1);
+        String text2 = dataContainer.get(index2);
+        String text3 = dataContainer.get(index3);
+        String text4 = dataContainer.get(index4);
+        String text5 = dataContainer.get(index4);
+        String text6 = dataContainer.get(index4);
+        String text7 = dataContainer.get(index4);
+        System.out.println(text1);
+        System.out.println(text2);
+        System.out.println(text3);
+        System.out.println(text4);
+        dataContainer.delete(1);
+        dataContainer.delete(text1);
+        System.out.println(Arrays.toString(dataContainer.getItems()));
+        System.out.println(dataContainer.get(index1));
+        dataContainer.sort(new StringComparatorByLength());
+        System.out.println(dataContainer);
+        dataContainer.sort(new StringComparatorByAlphabet());
         System.out.println(dataContainer);
 
+
+        for (String string : dataContainer) {
+            System.out.print(string + " - ");
+        }
+
     }
+
+
 }
