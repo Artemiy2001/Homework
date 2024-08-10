@@ -109,6 +109,30 @@ public class DataContainer<T> implements ArtemList<T> {
         return String.valueOf(dataString);
     }
 
+    public static <T extends Comparable> void sort(DataContainer<T> dataContainer){
+        for (int i = 1; i < dataContainer.size; i++){
+            for (int j = i; j > 0; j--){
+                if (dataContainer.data[j - 1].compareTo(dataContainer.data[j]) > 0){
+                    dataContainer.swap(dataContainer.data, j - 1, j);
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+
+    public static <T> void sort(DataContainer<T> dataContainer, Comparator<? super T> c){
+        for (int i = 1; i < dataContainer.size; i++){
+            for (int j = i; j > 0; j--){
+                if(c.compare(dataContainer.data[j-1], dataContainer.data[j]) > 0){
+                    dataContainer.swap(dataContainer.data, j - 1, j);
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+
 
     private T[] grow(int size){
         return Arrays.copyOf(data, size + 5);
@@ -138,6 +162,7 @@ public class DataContainer<T> implements ArtemList<T> {
         int cursor;
 
         Itr() {}
+
         @Override
         public boolean hasNext() {
             return cursor < size;
