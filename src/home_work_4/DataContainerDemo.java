@@ -18,6 +18,7 @@ public class DataContainerDemo {
         int index6 = dataContainer.add("Приветы");
         int index7 = dataContainer.add("Vladislav");
         int index8 = dataContainer.add("Привет");
+
         String text1 = dataContainer.get(index1);
         String text2 = dataContainer.get(index2);
         String text3 = dataContainer.get(index3);
@@ -25,16 +26,21 @@ public class DataContainerDemo {
         String text5 = dataContainer.get(index5);
         String text6 = dataContainer.get(index4);
         String text7 = dataContainer.get(index4);
+
         System.out.println(text1);
         System.out.println(text2);
         System.out.println(text3);
         System.out.println(text4);
+
         dataContainer.delete(1);
         dataContainer.delete(text1);
+
         System.out.println(Arrays.toString(dataContainer.getItems()));
         System.out.println(dataContainer.get(index1));
+
         dataContainer.sort(new StringComparatorByLength());
         System.out.println(dataContainer);
+
         dataContainer.sort(new StringComparatorByAlphabet());
         System.out.println(dataContainer);
 
