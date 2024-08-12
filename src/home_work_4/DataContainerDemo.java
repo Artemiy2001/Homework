@@ -27,30 +27,36 @@ public class DataContainerDemo {
         String text6 = dataContainer.get(index4);
         String text7 = dataContainer.get(index4);
 
-        System.out.println(text1);
-        System.out.println(text2);
-        System.out.println(text3);
-        System.out.println(text4);
+        System.out.println(text1 + " - значение 1");
+        System.out.println(text2 + " - значение 2");
+        System.out.println(text3 + " - значение 3");
+        System.out.println(text4 + " - значение 4");
+
+        System.out.println();
 
         dataContainer.delete(1);
         dataContainer.delete(text1);
 
-        System.out.println(Arrays.toString(dataContainer.getItems()));
+
+        System.out.println(Arrays.toString(dataContainer.getItems()) + " - массив значений из списка");
         System.out.println(dataContainer.get(index1));
 
         dataContainer.sort(new StringComparatorByLength());
-        System.out.println(dataContainer);
+        System.out.println(dataContainer + " - список отсортирован по длинне");
 
         dataContainer.sort(new StringComparatorByAlphabet());
-        System.out.println(dataContainer);
+        System.out.println(dataContainer + " - список отсортирован по алфавиту");
 
+
+        System.out.println();
+        System.out.println("Тест итератора");
 
         for (String string : dataContainer) {
             System.out.print(string + "  ");
         }
 
         System.out.println();
-        System.out.println();
+        System.out.println("Тест ститического сортровщика");
 
         DataContainer<String> dataString =  new DataContainer<>(String.class);
 
