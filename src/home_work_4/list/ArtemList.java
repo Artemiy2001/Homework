@@ -1,8 +1,6 @@
-package home_work_4;
+package home_work_4.list;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public interface ArtemList<T> extends Iterable<T>{
 

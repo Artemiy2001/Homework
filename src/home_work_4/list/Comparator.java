@@ -1,4 +1,4 @@
-package home_work_4;
+package home_work_4.list;
 
 public interface Comparator<T>{
 
