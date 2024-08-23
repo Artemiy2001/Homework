@@ -1,0 +1,6 @@
+1.Основной интерфейс - ArtemList
+2.Интерфейс компаратор - Comparator
+3.Компаратор по длинне строки - StringComparatorByLength
+4.Компаратор по алфавиту - StringComparatorByAlphabet
+5.Реализация интерфейса ArtemList - DataContainer
+6.Тестовый класс main - DataContainerDemo

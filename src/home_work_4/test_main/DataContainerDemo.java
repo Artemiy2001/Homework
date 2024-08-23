@@ -1,4 +1,9 @@
-package home_work_4;
+package home_work_4.test_main;
+
+import home_work_4.comparators.StringComparatorByAlphabet;
+import home_work_4.comparators.StringComparatorByLength;
+import home_work_4.list.ArtemList;
+import home_work_4.list.DataContainer;
 
 import java.util.Arrays;
 

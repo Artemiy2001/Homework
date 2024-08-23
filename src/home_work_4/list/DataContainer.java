@@ -1,4 +1,4 @@
-package home_work_4;
+package home_work_4.list;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

@@ -1,6 +1,8 @@
-package home_work_4;
+package home_work_4.comparators;
 
-public class StringComparatorByAlphabet implements Comparator<String>{
+import home_work_4.list.Comparator;
+
+public class StringComparatorByAlphabet implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
         o1 = o1.toLowerCase();
