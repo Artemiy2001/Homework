@@ -9,8 +9,14 @@ public class Main {
             System.out.println(Utils.generateRandomRussionString());
             System.out.println(Utils.getRandomNameByFile());
             System.out.println(Utils.getRandomNickByFile());
+            System.out.println(Utils.generateRandomEnglishString());
+            System.out.println(Utils.getRandomNickName());
             System.out.println();
         }
+
+
+
+
 
 
 
