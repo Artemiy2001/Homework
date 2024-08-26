@@ -19,6 +19,16 @@ public class DataContainer<T> implements ArtemList<T> {
     }
 
     @Override
+    public T[] data() {
+        return data;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
     public int add(T item){
         if (item == null){
             return -1;
@@ -33,7 +43,7 @@ public class DataContainer<T> implements ArtemList<T> {
 
     @Override
     public T get(int index){
-        if (index > size){
+        if (index > size && index < 0){
             return null;
         }
         return data[index];
@@ -106,11 +116,11 @@ public class DataContainer<T> implements ArtemList<T> {
         return String.valueOf(dataString);
     }
 
-    public static <T extends Comparable> void sort(DataContainer<T> dataContainer){
-        for (int i = 1; i < dataContainer.size; i++){
+    public static <T extends Comparable> void sort(ArtemList<T> dataContainer){
+        for (int i = 1; i < dataContainer.size(); i++){
             for (int j = i; j > 0; j--){
-                if (dataContainer.data[j - 1].compareTo(dataContainer.data[j]) > 0){
-                    dataContainer.swap(dataContainer.data, j - 1, j);
+                if (dataContainer.data()[j - 1].compareTo(dataContainer.data()[j]) > 0){
+                    dataContainer.swap(dataContainer.data(), j - 1, j);
                 }else {
                     break;
                 }
@@ -118,11 +128,11 @@ public class DataContainer<T> implements ArtemList<T> {
         }
     }
 
-    public static <T> void sort(DataContainer<T> dataContainer, Comparator<? super T> c){
-        for (int i = 1; i < dataContainer.size; i++){
+    public static <T> void sort(ArtemList<T> dataContainer, Comparator<? super T> c){
+        for (int i = 1; i < dataContainer.size(); i++){
             for (int j = i; j > 0; j--){
-                if(c.compare(dataContainer.data[j-1], dataContainer.data[j]) > 0){
-                    dataContainer.swap(dataContainer.data, j - 1, j);
+                if(c.compare(dataContainer.data()[j-1], dataContainer.data()[j]) > 0){
+                    dataContainer.swap(dataContainer.data(), j - 1, j);
                 }else {
                     break;
                 }
@@ -142,7 +152,7 @@ public class DataContainer<T> implements ArtemList<T> {
         data[size = newSize] = null;
     }
 
-    private void swap(T[] arr, int a, int b) {
+    public void swap(T[] arr, int a, int b) {
         T object = arr[a];
         arr[a] = arr[b];
         arr[b] = object;

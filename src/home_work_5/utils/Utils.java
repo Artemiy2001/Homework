@@ -1,6 +1,4 @@
-package home_work_5;
-
-import com.sun.jdi.CharValue;
+package home_work_5.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,6 +10,18 @@ import java.util.Scanner;
 
 public class Utils {
 
+
+    public static String generatePassword(){
+
+        Random random = new Random();
+        StringBuilder password = new StringBuilder();
+        int passwordLength = random.nextInt(5, 11);
+        for (int i = 0; i < passwordLength; i++){
+            password.append((char) random.nextInt(65, 125));
+        }
+
+        return password.toString();
+    }
 
     public static String generateRandomString(){
         Random random = new Random();
@@ -85,7 +95,7 @@ public class Utils {
 
     }
 
-    public static String getRandomNickName(){
+    public static String getRandomNickNameByFile(){
         Path path = Path.of("src","home_work_5", "resources", "AllNickName");
         List<String> nickNameList = new ArrayList<>();
         Random random = new Random();

@@ -20,17 +20,17 @@ public class DataContainerDemo {
         int index3 = dataContainer.add("Работаю");
         int index4 = dataContainer.add("Артем");
         int index5 = dataContainer.add("Дизоксирибонуклииновая кислота");
-        int index6 = dataContainer.add("Приветы");
-        int index7 = dataContainer.add("Vladislav");
-        int index8 = dataContainer.add("Привет");
+        dataContainer.add("Приветы");
+        dataContainer.add("Vladislav");
+        dataContainer.add("Привет");
 
         String text1 = dataContainer.get(index1);
         String text2 = dataContainer.get(index2);
         String text3 = dataContainer.get(index3);
         String text4 = dataContainer.get(index4);
-        String text5 = dataContainer.get(index5);
-        String text6 = dataContainer.get(index4);
-        String text7 = dataContainer.get(index4);
+        dataContainer.get(index5);
+        dataContainer.get(index4);
+        dataContainer.get(index4);
 
         System.out.println(text1 + " - значение 1");
         System.out.println(text2 + " - значение 2");
@@ -63,7 +63,7 @@ public class DataContainerDemo {
         System.out.println();
         System.out.println("Тест ститического сортровщика");
 
-        DataContainer<String> dataString =  new DataContainer<>(String.class);
+        ArtemList<String> dataString =  new DataContainer<>(String.class);
 
         dataString.add("sda");
         dataString.add("sadaf");

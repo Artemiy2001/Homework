@@ -12,4 +12,12 @@ public class Animal {
     public String getNick() {
         return nick;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
 }
