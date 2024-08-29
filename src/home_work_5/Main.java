@@ -18,14 +18,10 @@ public class Main {
         Set<Person> personSet = new HashSet<>();
         Set<Animal> animalSet = new TreeSet<>(new AnimalComparatorByAge());
 
-        for (int i = 0; i < 10000; i++){
-
-            personList.add(Creator.createPerson());
-            animalList.add(Creator.createAnimal());
-            personSet.add(Creator.createPerson());
-            animalSet.add(Creator.createAnimal());
-
-        }
+        Creator.fillPersonList(personList, 1000);
+        Creator.fillAnimalList(animalList, 1000);
+        Creator.fillPersonList(personSet, 1000);
+        Creator.fillAnimalList(animalSet, 1000);
 
 
         long sortTime1 = sorter(personList, new PersonComparatorByPasswordAndNick());

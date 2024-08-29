@@ -3,9 +3,26 @@ package home_work_5.utils;
 import home_work_5.Animal;
 import home_work_5.Person;
 
+import java.util.Collection;
+
 public class Creator {
 
-    public static Person createPerson() {
+
+    public static void fillPersonList(Collection<Person> c, int count){
+
+        for (int i = 0; i < count; i++){
+            c.add(createPerson());
+        }
+    }
+
+    public static void fillAnimalList(Collection<Animal> c, int count){
+
+        for (int i = 0; i < count; i++){
+            c.add(createAnimal());
+        }
+    }
+
+    private static Person createPerson() {
 
         Person person = new Person();
 
@@ -17,7 +34,7 @@ public class Creator {
 
     }
 
-    public static Animal createAnimal(){
+    private static Animal createAnimal(){
 
         Animal animal = new Animal();
 
