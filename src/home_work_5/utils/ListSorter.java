@@ -1,11 +1,8 @@
 package home_work_5.utils;
 
-import home_work_5.Person;
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 
 public class ListSorter<E> {
 

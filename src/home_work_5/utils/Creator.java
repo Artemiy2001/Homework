@@ -1,46 +1,41 @@
 package home_work_5.utils;
 
-import home_work_5.Animal;
-import home_work_5.Person;
+import home_work_5.animal_and_person.Animal;
+import home_work_5.animal_and_person.Person;
 
 import java.util.Collection;
 
 public class Creator {
 
 
-    public static void fillPersonList(Collection<Person> c, int count){
+    public static long fillPersonList(Collection<Person> c, int count){
 
+        long t = System.currentTimeMillis();
         for (int i = 0; i < count; i++){
             c.add(createPerson());
         }
+        return System.currentTimeMillis() - t;
     }
 
-    public static void fillAnimalList(Collection<Animal> c, int count){
+    public static long fillAnimalList(Collection<Animal> c, int count){
 
+        long t = System.currentTimeMillis();
         for (int i = 0; i < count; i++){
             c.add(createAnimal());
         }
+        return System.currentTimeMillis() - t;
     }
 
-    private static Person createPerson() {
+    public static Person createPerson() {
 
-        Person person = new Person();
-
-        person.setName(Utils.getRandomNameByFile());
-        person.setNick(Utils.getRandomNickNameByFile());
-        person.setPassword(Utils.generatePassword());
-
-        return person;
+        return new Person(Random.getRandomNickNameByFile(), Random.generatePassword(), Random.getRandomNameByFile());
 
     }
 
     private static Animal createAnimal(){
 
-        Animal animal = new Animal();
+        return new Animal(Random.generateRandomAge(), Random.getRandomNickByFile());
 
-        animal.setAge(Utils.generateRandomAge());
-        animal.setNick(Utils.getRandomNickByFile());
 
-        return animal;
     }
 }

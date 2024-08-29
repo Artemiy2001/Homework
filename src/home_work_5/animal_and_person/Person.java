@@ -1,10 +1,20 @@
-package home_work_5;
+package home_work_5.animal_and_person;
 
 public class Person {
 
     private String nick;
     private String password;
     private String name;
+
+    public Person() {
+
+    }
+
+    public Person(String nick, String password, String name) {
+        this.nick = nick;
+        this.password = password;
+        this.name = name;
+    }
 
     public String getNick() {
         return nick;

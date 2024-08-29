@@ -1,6 +1,6 @@
 package home_work_5.comparators;
 
-import home_work_5.Animal;
+import home_work_5.animal_and_person.Animal;
 
 import java.util.Comparator;
 

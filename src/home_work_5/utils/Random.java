@@ -5,15 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
-public class Utils {
+public class Random {
 
 
     public static String generatePassword(){
 
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         StringBuilder password = new StringBuilder();
         int passwordLength = random.nextInt(5, 11);
         for (int i = 0; i < passwordLength; i++){
@@ -24,7 +23,7 @@ public class Utils {
     }
 
     public static String generateRandomString(){
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -35,7 +34,7 @@ public class Utils {
 
     public static String generateRandomRussionString(){
 
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -46,7 +45,7 @@ public class Utils {
 
     public static String generateRandomEnglishString(){
 
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -71,7 +70,7 @@ public class Utils {
         str = str.replaceAll(" ", "");
         String[] arrString = str.split(",");
 
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         return arrString[random.nextInt(0, arrString.length)];
 
 
@@ -89,7 +88,7 @@ public class Utils {
         str = str.replaceAll(" ", "");
         String[] arrString = str.split(",");
 
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         return arrString[random.nextInt(0, arrString.length)];
 
 
@@ -98,7 +97,7 @@ public class Utils {
     public static String getRandomNickNameByFile(){
         Path path = Path.of("src","home_work_5", "resources", "AllNickName");
         List<String> nickNameList = new ArrayList<>();
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
 
         Scanner scanner;
         try {
@@ -115,7 +114,7 @@ public class Utils {
     }
 
     public static int generateRandomAge(){
-        Random random = new Random();
+        java.util.Random random = new java.util.Random();
         return random.nextInt(1, 16);
     }
 }
