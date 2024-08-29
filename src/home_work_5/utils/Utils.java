@@ -113,4 +113,9 @@ public class Utils {
 
         return nickNameList.get(random.nextInt(0, nickNameList.size()));
     }
+
+    public static int generateRandomAge(){
+        Random random = new Random();
+        return random.nextInt(1, 16);
+    }
 }
