@@ -26,7 +26,7 @@ public class Creator {
         return System.currentTimeMillis() - t;
     }
 
-    public static Person createPerson() {
+    private static Person createPerson() {
 
         return new Person(Random.getRandomNickNameByFile(), Random.generatePassword(), Random.getRandomNameByFile());
 
