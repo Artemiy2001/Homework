@@ -20,7 +20,7 @@ public class Main {
         Set<Person> personSet = new HashSet<>();
         Set<Animal> animalSet = new TreeSet<>(new AnimalComparatorByAge());
 
-        int COLLECTION_SIZE = 100000;
+        int COLLECTION_SIZE = 100_000;
 
         long t1 = Creator.fillPersonList(personList, COLLECTION_SIZE);
         System.out.println("Заполнение ArrayList заняло: " + t1 + " милисекунд");

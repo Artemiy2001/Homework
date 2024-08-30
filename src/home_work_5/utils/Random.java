@@ -96,19 +96,15 @@ public class Random {
 
     public static String getRandomNickNameByFile(){
         Path path = Path.of("src","home_work_5", "resources", "AllNickName");
-        List<String> nickNameList = new ArrayList<>();
-        java.util.Random random = new java.util.Random();
 
-        Scanner scanner;
+        List<String> nickNameList;
         try {
-            scanner = new Scanner(path);
+            nickNameList = Files.readAllLines(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        while (scanner.hasNextLine()){
-            nickNameList.add(scanner.nextLine());
-        }
+        java.util.Random random = new java.util.Random();
 
         return nickNameList.get(random.nextInt(0, nickNameList.size()));
     }

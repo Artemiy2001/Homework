@@ -8,6 +8,14 @@ import java.util.Collection;
 public class Creator {
 
 
+    public static void testFill(Collection<Person> c, int count){
+
+        for (int i = 0; i < count; i++){
+            c.add(new Person(Random.getRandomNickNameByFile(), "asda", "sadsad"));
+        }
+    }
+
+
     public static long fillPersonList(Collection<Person> c, int count){
 
         long t = System.currentTimeMillis();
