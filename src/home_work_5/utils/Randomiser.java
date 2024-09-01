@@ -3,18 +3,38 @@ package home_work_5.utils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Random;
 
-public class Random {
+public class Randomiser {
+
+    private static final Path pathNicks = Path.of("src","home_work_5", "resources", "AllNicks");
+
+    private static final Path pathNickNames = Path.of("src","home_work_5", "resources", "AllNickName");
+
+    private static final Path pathNames = Path.of("src","home_work_5", "resources", "AllNames");
+
+    private static final Random random = new Random();
+
+    private static final List<String> nickNameList;
+    private static final List<String> nickList;
+    private static final List<String> nameList;
+
+    static {
+        try {
+            nickNameList = Files.readAllLines(pathNickNames);
+            nickList = List.of(Files.readString(pathNicks).split("[,\n\\s]+"));
+            nameList = List.of(Files.readString(pathNames).split("[,\n\\s]+"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     public static String generatePassword(){
 
-        java.util.Random random = new java.util.Random();
         StringBuilder password = new StringBuilder();
-        int passwordLength = random.nextInt(5, 11);
+        int passwordLength = random.nextInt(5, 111);
         for (int i = 0; i < passwordLength; i++){
             password.append((char) random.nextInt(65, 125));
         }
@@ -23,7 +43,7 @@ public class Random {
     }
 
     public static String generateRandomString(){
-        java.util.Random random = new java.util.Random();
+
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -34,7 +54,6 @@ public class Random {
 
     public static String generateRandomRussionString(){
 
-        java.util.Random random = new java.util.Random();
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -45,7 +64,6 @@ public class Random {
 
     public static String generateRandomEnglishString(){
 
-        java.util.Random random = new java.util.Random();
         int stringLength = random.nextInt(10) + 1;
         StringBuilder name = new StringBuilder();
         for (int i = 0; stringLength > i; i++){
@@ -59,58 +77,27 @@ public class Random {
     }
 
     public static String getRandomNameByFile(){
-        Path path = Path.of("src","home_work_5", "resources", "AllNames");
-        String str;
-        try {
-            str = Files.readString(path);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        str = str.replaceAll("\n","");
-        str = str.replaceAll(" ", "");
-        String[] arrString = str.split(",");
 
-        java.util.Random random = new java.util.Random();
-        return arrString[random.nextInt(0, arrString.length)];
 
+        return nameList.get(random.nextInt(0, nameList.size()));
 
     }
 
     public static String getRandomNickByFile(){
-        Path path = Path.of("src","home_work_5", "resources", "AllNicks");
-        String str;
-        try {
-            str = Files.readString(path);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        str = str.replaceAll("\n","");
-        str = str.replaceAll(" ", "");
-        String[] arrString = str.split(",");
 
-        java.util.Random random = new java.util.Random();
-        return arrString[random.nextInt(0, arrString.length)];
 
+        return nickList.get(random.nextInt(0, nickList.size()));
 
     }
 
     public static String getRandomNickNameByFile(){
-        Path path = Path.of("src","home_work_5", "resources", "AllNickName");
 
-        List<String> nickNameList;
-        try {
-            nickNameList = Files.readAllLines(path);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        java.util.Random random = new java.util.Random();
 
         return nickNameList.get(random.nextInt(0, nickNameList.size()));
     }
 
     public static int generateRandomAge(){
-        java.util.Random random = new java.util.Random();
+
         return random.nextInt(1, 16);
     }
 }

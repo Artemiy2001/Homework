@@ -20,7 +20,7 @@ public class Main {
         Set<Person> personSet = new HashSet<>();
         Set<Animal> animalSet = new TreeSet<>(new AnimalComparatorByAge());
 
-        int COLLECTION_SIZE = 100_000;
+        int COLLECTION_SIZE = 1_00000;
 
         long t1 = Creator.fillPersonList(personList, COLLECTION_SIZE);
         System.out.println("Заполнение ArrayList заняло: " + t1 + " милисекунд");
@@ -34,16 +34,17 @@ public class Main {
         System.out.println("--------------");
 
 
-        long sortTime1 = sorter(personList, new PersonComparatorByPasswordAndNick());
+        long sortTime1 = sorter(personList, new PersonComparatorByPassword());
         System.out.println("Время сортировки ArrayList: " + sortTime1);
 
         List<Animal> newAnimalList = new ArrayList<>(animalList);
         long sortTime2 = sorter(newAnimalList, new AnimalComparatorByPasswordAndNick());
-        animalList.removeAll(newAnimalList);
+        animalList = new LinkedList<>(newAnimalList);
         System.out.println("Время сортировки LinkedList: " + sortTime2);
 
-        new LinkedHashSet<Person>(personSet);
-        long sortTime3 = sorter(new ArrayList<>(personSet), new PersonComparatorByPassword());
+        List<Person> newPersonSet = new ArrayList<>(personSet);
+        long sortTime3 = sorter(newPersonSet, new PersonComparatorByPasswordAndNick());
+        personSet = new LinkedHashSet<>(newPersonSet);
         System.out.println("Время сортировки HashSet: " + sortTime3);
 
         System.out.println("--------------");
@@ -69,14 +70,16 @@ public class Main {
 
 
         long t7 = System.currentTimeMillis();
-        for (int i = 0; i < personList.size(); i++){
-            personList.remove(i);
-        }
+
+        personList.clear();
+
         System.out.println("Время удаления элементов: " + (System.currentTimeMillis() - t7));
 
 
-
-
+//        System.out.println(personList);
+//        System.out.println(personSet);
+//        System.out.println(animalList);
+//        System.out.println(animalSet);
 
 
 
@@ -86,6 +89,7 @@ public class Main {
     private static <T> long sorter(List<T> list, Comparator<T> comparator){
 
         long time = System.currentTimeMillis();
+
         ListSorter<T> listSorter = new ListSorter<>();
         listSorter.quickSort(list, comparator);
 

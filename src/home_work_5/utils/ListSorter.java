@@ -38,11 +38,7 @@ public class ListSorter<E> {
         int pivot = list.size() - 1;
         int wall = 0;
 
-
         sort(list, pivot, wall, c);
-
-
-
 
     }
 
@@ -51,23 +47,21 @@ public class ListSorter<E> {
         if (left >= right){
             return;
         }
-        int pivot = right;
         int wall = left;
 
 
         for (int i = wall; i < right; i++){
-            if(c.compare(list.get(i),list.get(pivot)) < 0){
+            if(c.compare(list.get(i),list.get(right)) < 0){
 
                 Collections.swap(list, i, wall);
                 wall++;
 
             }
         }
-        Collections.swap(list, wall, pivot);
+        Collections.swap(list, wall, right);
 
 
-
-        sort(list, pivot, wall + 1, c);
         sort(list, wall - 1, left, c);
+        sort(list, right, wall + 1, c);
     }
 }
