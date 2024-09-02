@@ -19,9 +19,10 @@ public class TestMain {
 
         long t = System.currentTimeMillis();
 
-        Creator.testFill(personList, 100_0000);
+        Creator.testFill(personList, 1_000_000);
 
         sorter.quickSort(personList, new PersonComparatorByPassword());
+
 
 
         System.out.println(System.currentTimeMillis() - t);

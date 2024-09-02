@@ -34,7 +34,7 @@ public class Randomiser {
     public static String generatePassword(){
 
         StringBuilder password = new StringBuilder();
-        int passwordLength = random.nextInt(5, 111);
+        int passwordLength = random.nextInt(5, 11);
         for (int i = 0; i < passwordLength; i++){
             password.append((char) random.nextInt(65, 125));
         }

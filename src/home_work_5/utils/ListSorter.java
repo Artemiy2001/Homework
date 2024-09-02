@@ -35,33 +35,39 @@ public class ListSorter<E> {
     }
 
     public void quickSort(List<E> list, Comparator<? super E> c){
-        int pivot = list.size() - 1;
-        int wall = 0;
+        int right = list.size() - 1;
+        int left = 0;
 
-        sort(list, pivot, wall, c);
+        sort(list, left, right, c);
 
     }
 
-    private void sort(List<E> list, int right, int left, Comparator<? super E> c){
+    private void sort(List<E> list, int left, int right, Comparator<? super E> c){
 
         if (left >= right){
             return;
         }
-        int wall = left;
 
+        int lt = left;
+        int gt = right;
+        int i = left;
 
-        for (int i = wall; i < right; i++){
-            if(c.compare(list.get(i),list.get(right)) < 0){
+        E pivot = list.get(right);
 
-                Collections.swap(list, i, wall);
-                wall++;
-
+        while (i <= gt){
+            if (c.compare(list.get(i), pivot) < 0){
+                Collections.swap(list, lt++, i++);
+            } else if (c.compare(list.get(i), pivot) > 0) {
+                Collections.swap(list, i, gt--);
+            }else {
+                i++;
             }
         }
-        Collections.swap(list, wall, right);
 
+        sort(list, left, lt - 1, c);
+        sort(list,gt + 1, right, c);
 
-        sort(list, wall - 1, left, c);
-        sort(list, right, wall + 1, c);
     }
+
+
 }
