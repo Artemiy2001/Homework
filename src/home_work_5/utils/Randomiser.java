@@ -6,7 +6,13 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Random;
 
-public class Randomiser {
+public final class Randomiser {
+
+    /**
+     * Статический класс для генерации и получения имен, кличек, паролей различными способами
+     */
+
+    private Randomiser() {}
 
     private static final Path pathNicks = Path.of("src","home_work_5", "resources", "AllNicks");
 

@@ -6,16 +6,13 @@ import home_work_5.animal_and_person.Person;
 import java.util.Collection;
 import java.util.Random;
 
-public class Creator {
+public final class Creator {
 
+    /**
+     * Статический класс для заполнения коллекций различными объектами
+     */
 
-    public static void testFill(Collection<Person> c, int count){
-
-        for (int i = 0; i < count; i++){
-            c.add(new Person(Randomiser.getRandomNickNameByFile(), Randomiser.generatePassword(), Randomiser.getRandomNameByFile()));
-        }
-    }
-
+    private Creator() {}
 
     public static long fillPersonList(Collection<Person> c, int count){
 

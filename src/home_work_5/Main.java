@@ -15,12 +15,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Создаем различные коллекции
+
         List<Person> personList = new ArrayList<>();
         List<Animal> animalList = new LinkedList<>();
         Set<Person> personSet = new HashSet<>();
         Set<Animal> animalSet = new TreeSet<>(new AnimalComparatorByAge());
 
-        int COLLECTION_SIZE = 1_000_000;
+        final int COLLECTION_SIZE = 1_000_000; // Кол-во обьектов в коллекции
+
+        //Заполняем коллекции
 
         long t1 = Creator.fillPersonList(personList, COLLECTION_SIZE);
         System.out.println("Заполнение ArrayList заняло: " + t1 + " милисекунд");
@@ -33,29 +37,36 @@ public class Main {
 
         System.out.println("--------------");
 
+        //Сортируем все коллекции кроме TreeSet т.к. она уже отсортирована
 
         long sortTime1 = sorter(personList, new PersonComparatorByPassword());
-        System.out.println("Время сортировки ArrayList: " + sortTime1);
+        System.out.println("Время сортировки по длинне пароля ArrayList: " + sortTime1);
 
         List<Animal> newAnimalList = new ArrayList<>(animalList);
         long sortTime2 = sorter(newAnimalList, new AnimalComparatorByPasswordAndNick());
         animalList = new LinkedList<>(newAnimalList);
-        System.out.println("Время сортировки LinkedList: " + sortTime2);
+        System.out.println("Время сортировки LinkedList по паролю и нику: " + sortTime2);
 
-        List<Person> newPersonSet = new ArrayList<>(personSet);
-        long sortTime3 = sorter(newPersonSet, new PersonComparatorByPasswordAndNick());
-        personSet = new LinkedHashSet<>(newPersonSet);
-        System.out.println("Время сортировки HashSet: " + sortTime3);
+        long time = System.currentTimeMillis();
+        List<Person> newPersonList = new ArrayList<>(personSet);
+        newPersonList.sort(new PersonComparatorByPasswordAndNick());
+        personSet = new LinkedHashSet<>(newPersonList);
+        System.out.println("Время сортирови HashSet встроенным сортировщиком: " + (System.currentTimeMillis() - time));
+
 
         System.out.println("--------------");
+
+        //Получаем общую длинну всех паролей в ArrayList с помощью iterator
 
         long t5 = System.currentTimeMillis();
         long passwordLength1 = 0;
         for (Person person : personList) {
             passwordLength1 += person.getPassword().length();
         }
-        System.out.println("Длинна всех паролей: " + passwordLength1 + " символов");
+        System.out.println("Длинна всех паролей в списке: " + passwordLength1 + " символов");
         System.out.println("Время итерирования iterator: " + (System.currentTimeMillis() - t5));
+
+        //Получаем общую длинну всех паролей в ArrayList с помощью цикла for
 
         long t6 = System.currentTimeMillis();
         long passwordLength2 = 0;
@@ -63,23 +74,18 @@ public class Main {
             passwordLength2 += personList.get(i).getPassword().length();
 
         }
-        System.out.println("Длинна всех паролей: " + passwordLength2 + " символов");
+        System.out.println("Длинна всех паролей в списке: " + passwordLength2 + " символов");
         System.out.println("Время итерирования циклом: " + (System.currentTimeMillis() - t6));
 
         System.out.println("--------------");
 
+        //Очищаем список ArrayList
 
         long t7 = System.currentTimeMillis();
 
         personList.clear();
 
         System.out.println("Время удаления элементов: " + (System.currentTimeMillis() - t7));
-
-
-//        System.out.println(personList);
-//        System.out.println(personSet);
-//        System.out.println(animalList);
-//        System.out.println(animalSet);
 
 
 

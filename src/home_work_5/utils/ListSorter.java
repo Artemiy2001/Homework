@@ -6,6 +6,12 @@ import java.util.List;
 
 public class ListSorter<E> {
 
+    /**
+     * Класс для сортировки коллекций различными алгоритмами сортировки
+     * @param list - коллекция типа List
+     * @param c - Комапаратор
+     */
+
     public void bubbleListSort(List<E> list, Comparator<? super E> c){
         boolean isChange = true;
         while (isChange){
@@ -64,8 +70,8 @@ public class ListSorter<E> {
             }
         }
 
-        sort(list, left, lt - 1, c);
         sort(list,gt + 1, right, c);
+        sort(list, left, lt - 1, c);
 
     }
 
