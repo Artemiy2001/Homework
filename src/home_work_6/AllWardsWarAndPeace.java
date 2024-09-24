@@ -11,7 +11,7 @@ public class AllWardsWarAndPeace {
 
     private static final Set<String> setWords = new HashSet<>();
 
-    public static void getWords(Path path){
+    public static Set<String> getWords(Path path){
         String warAndPeace = null;
         try {
             warAndPeace = Files.readString(path);
@@ -20,6 +20,8 @@ public class AllWardsWarAndPeace {
         }
         String[] newWarAndPeace = warAndPeace.split("[ ,.&?:;!()\"'\n-]+");
         setWords.addAll(Arrays.asList(newWarAndPeace));
+
+        return setWords;
     }
 
 

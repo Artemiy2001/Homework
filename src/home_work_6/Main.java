@@ -3,12 +3,23 @@ package home_work_6;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Path path = Path.of("src", "home_work_6", "rescources", "Война и мир_книга.txt");
+
+        Set<String> setWords = AllWardsWarAndPeace.getWords(path);
+
+        setWords.stream()
+                .filter(s1 -> s1.charAt(0) == 'я')
+                .forEach(System.out::println);
+
+        System.out.println();
+
 
         System.out.println("Топ 5 встречающихся слов: ");
         TopWords.getTopWords(path);
